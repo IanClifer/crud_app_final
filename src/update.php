@@ -4,7 +4,7 @@ require_once("connection.php");
 // Use prepared statement to avoid SQL injection
 $sql = "UPDATE todo_table SET description=? WHERE id=?";
 $stmt = $conn->prepare($sql);
-$stmt->bind_param("ss", $_GET['de'], $_GET['id']); // Assuming 'description' is a string and 'id' is an integer
+$stmt->bind_param("ss", $_GET['de'], $_GET['id']);
 
 if ($stmt->execute()) {
     echo "Record updated successfully";
